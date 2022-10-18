@@ -8,7 +8,31 @@
 
 The following methods are used to control entities & make informed decisions during the game.
 
-- `upgradeWallRandomly` [EID](#eid) [eXP](#exp)
+#### upgradeWallRandomly
+
+Arguments: [EID](#eid) [eXP](#exp)
+
+Usage: 
+```jsx
+function wallTickHandler(EID, eXP, API) {
+    if (eXP > 1) {
+        API.upgradeWallRandomly(EID, eXP);
+    }  
+}  
+```
+
+#### upgradeTowerRandomly
+
+Arguments: [EID](#eid) [eXP](#exp)
+
+Usage: 
+```jsx
+function towerTickHandler(EID, eXP, API) {
+    if (eXP > 1) {
+        API.upgradeTowerRandomly(EID, eXP);
+    }
+}      
+```
     
 ## Properties / Options
 
@@ -23,6 +47,8 @@ An entity's unique identifier.
 #### eXP 
 
 Type: `Number`
+
+An entity's currently unspent experience points. This can be saved for future use, converted or transfered. 
 
 ## Sample Scripts
 
