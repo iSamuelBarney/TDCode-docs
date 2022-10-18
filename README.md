@@ -21,7 +21,7 @@ The following methods are used to control entities & make informed decisions dur
 
 ### upgradeWallRandomly
 
-Arguments: [EID](#eid) [eXP](#exp)
+Arguments: ([EID](#eid), [eXP](#exp))
 
 Usage: 
 ```jsx
@@ -34,7 +34,7 @@ function wallTickHandler(EID, eXP, API) {
 
 ### upgradeTowerRandomly
 
-Arguments: [EID](#eid) [eXP](#exp)
+Arguments: ([EID](#eid), [eXP](#exp))
 
 Usage: 
 ```jsx
