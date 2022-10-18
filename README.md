@@ -1,5 +1,8 @@
 # TDCode-docs
 
+- [API Reference](#api-reference)
+- [Properties / Options](#properties--options)
+- [Sample Scripts](#sample-scripts)
 
 ## API Reference
 
