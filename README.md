@@ -10,16 +10,16 @@
 - When converting [eXP](#exp) to upgrade an Entity it's potential is the percentage of weight used in the upgrade. 
     - Example: `eXP of 1 with a potential of 77% is roughly the same upgrade as eXP of 0.77 with a potential of 100%`
 
-- When converting [eXP](#exp) to upgrade an Entity it's number of previous upgrades in that attribute will have diminishing returns.
+- When converting [eXP](#exp) to upgrade an Entity, it's previous number of upgrades in that attribute will result in diminishing returns.  
 
-- Spend this on an Entity with higher potential. i.e. `70-90%`
+- Spend [eXP](#exp) on an Entity with higher potential for a greater impact. i.e. `70-90%`
 
 
 ## API Reference
 
 The following methods are used to control entities & make informed decisions during the game.
 
-#### upgradeWallRandomly
+### upgradeWallRandomly
 
 Arguments: [EID](#eid) [eXP](#exp)
 
@@ -32,7 +32,7 @@ function wallTickHandler(EID, eXP, API) {
 }  
 ```
 
-#### upgradeTowerRandomly
+### upgradeTowerRandomly
 
 Arguments: [EID](#eid) [eXP](#exp)
 
@@ -49,13 +49,13 @@ function towerTickHandler(EID, eXP, API) {
 
 When an invalid or missing argument is used an exception will occure triggering a crash/restart of the game. This can be used to debug your scripts.
 
-#### EID 
+### EID 
 
 Type: `String`
 
 An entity's unique identifier. 
 
-#### eXP 
+### eXP 
 
 Type: `Number`
 
