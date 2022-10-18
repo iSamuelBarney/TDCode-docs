@@ -21,9 +21,9 @@ The following methods are used to control entities & make informed decisions dur
 
 ### upgradeWallRandomly
 
-Arguments: ( [EID](#eid) , [eXP](#exp) )
+*Arguments*: ( [EID](#eid) , [eXP](#exp) )
 
-Usage: 
+*Usage*: 
 ```jsx
 function wallTickHandler(EID, eXP, API) {
     if (eXP > 1) {
@@ -34,9 +34,9 @@ function wallTickHandler(EID, eXP, API) {
 
 ### upgradeTowerRandomly
 
-Arguments: ( [EID](#eid) , [eXP](#exp) )
+*Arguments*: ( [EID](#eid) , [eXP](#exp) )
 
-Usage: 
+*Usage*: 
 ```jsx
 function towerTickHandler(EID, eXP, API) {
     if (eXP > 1) {
@@ -51,13 +51,13 @@ When an invalid or missing argument is used an exception will occure triggering 
 
 ### EID 
 
-Type: `String`
+*Type*: `String`
 
 An entity's unique identifier. 
 
 ### eXP 
 
-Type: `Number`
+*Type*: `Number`
 
 An Entity's currently unspent experience points. This can be saved for future use, converted or transfered. 
 
