@@ -131,6 +131,8 @@ When upgrading choose an attribute that will have the largest impact.
 
 ## Sample Scripts
 
+- [Tags](scripts/tags.json)
+
 - [Tower Tick Handler](scripts/TowerTickHandler.js)
 
 - [Wall Tick Handler](scripts/WallTickHandler.js)
