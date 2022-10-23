@@ -136,3 +136,13 @@ When upgrading choose an attribute that will have the largest impact.
 - [Tower Tick Handler](scripts/TowerTickHandler.js)
 
 - [Wall Tick Handler](scripts/WallTickHandler.js)
+
+
+```js
+'tower tick':
+    "const upgradeRange = Math.random() > 0.27;        API.log(          `${EID}: Upgrading ${            upgradeRange ? 'range' : 'damage'          } with XP:${eXP}`,        );        if (upgradeRange) {          API.upgradeEntity(EID, eXP, 'range');        } else {          API.upgradeEntity(EID, eXP, 'damage');        }",
+  'wall tick':
+    "const upgradeHP = Math.random() > 0.27;        API.log(          `${EID}: Upgrading ${            upgradeHP ? 'hp' : 'hp_recovery'          } with XP:${eXP}`,        );        if (upgradeHP) {          API.upgradeEntity(EID, eXP, 'hp');        } else {          API.upgradeEntity(EID, eXP, 'hp_recovery');        }",
+  'wind tick':
+    "if (Math.random() > 0.27) {          API.upgradeEntity(EID, eXP, 'speed');        } else {          API.upgradeEntity(EID, eXP, 'income');        }",
+```
