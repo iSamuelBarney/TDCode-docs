@@ -6,6 +6,11 @@
 - [Upgradable Attributes](#upgradable-attributes)
 - [Sample Scripts](#sample-scripts)
 
+## Updates / Notes
+
+- This is a work in progress & as of now will change daily/weekly
+- When the docs are more stable there will be a more detailed note
+
 ## Tips
 
 - Kill all zombies as fast as possible so you earn more [eXP](#exp) or take longer to earn more [INCOME](#income)
@@ -22,22 +27,7 @@
 
 The following methods are used to control entities & make informed decisions during the game.
 
-### getZombies
 
-*Type*: `Array`
-
-*Arguments*: ( )
-
-*Usage*: 
-```jsx
-function wallTickHandler(EID, eXP, API) {
-    const zombies = API.getZombies()
-    if (eXP > 1 && zombies.length > 7) {
-        API.upgradeWallRandomly(EID, eXP);
-    }  
-} 
-
-```
 
 ### getTags
 
@@ -56,35 +46,22 @@ function wallTickHandler(EID, eXP, API) {
 
 ```
 
-### upgradeWallRandomly
+### upgradeEntity
 
 *Type*: `Void`
 
-*Arguments*: ( [EID](#eid) , [eXP](#exp) )
+*Arguments*: ( [EID](#eid) , [eXP](#exp), [ATTR](#attr) )
 
 *Usage*: 
 ```jsx
-function wallTickHandler(EID, eXP, API) {
-    if (eXP > 1) {
-        API.upgradeWallRandomly(EID, eXP);
-    }  
-}  
+
+    
+    API.upgradeEntity(EID, eXP,'speed');
+     
+
 ```
 
-### upgradeTowerRandomly
 
-*Type*: `Void`
-
-*Arguments*: ( [EID](#eid) , [eXP](#exp) )
-
-*Usage*: 
-```jsx
-function towerTickHandler(EID, eXP, API) {
-    if (eXP > 1) {
-        API.upgradeTowerRandomly(EID, eXP);
-    }
-}      
-```
     
 ## Properties / Options
 
@@ -133,16 +110,13 @@ When upgrading choose an attribute that will have the largest impact.
 
 - [Tags](scripts/tags.json)
 
-- [Tower Tick Handler](scripts/TowerTickHandler.js)
 
-- [Wall Tick Handler](scripts/WallTickHandler.js)
+tower tick: `
+const upgradeRange = Math.random() > 0.27;        API.log(          `${EID}: Upgrading ${            upgradeRange ? 'range' : 'damage'          } with XP:${eXP}`,        );        if (upgradeRange) {          API.upgradeEntity(EID, eXP, 'range');        } else {          API.upgradeEntity(EID, eXP, 'damage');        }
+`
 
+wall tick: `
+const upgradeHP = Math.random() > 0.27;        API.log(          `${EID}: Upgrading ${            upgradeHP ? 'hp' : 'hp_recovery'          } with XP:${eXP}`,        );        if (upgradeHP) {          API.upgradeEntity(EID, eXP, 'hp');        } else {          API.upgradeEntity(EID, eXP, 'hp_recovery');        }`
 
-```js
-'tower tick':
-    "const upgradeRange = Math.random() > 0.27;        API.log(          `${EID}: Upgrading ${            upgradeRange ? 'range' : 'damage'          } with XP:${eXP}`,        );        if (upgradeRange) {          API.upgradeEntity(EID, eXP, 'range');        } else {          API.upgradeEntity(EID, eXP, 'damage');        }",
-  'wall tick':
-    "const upgradeHP = Math.random() > 0.27;        API.log(          `${EID}: Upgrading ${            upgradeHP ? 'hp' : 'hp_recovery'          } with XP:${eXP}`,        );        if (upgradeHP) {          API.upgradeEntity(EID, eXP, 'hp');        } else {          API.upgradeEntity(EID, eXP, 'hp_recovery');        }",
-  'wind tick':
-    "if (Math.random() > 0.27) {          API.upgradeEntity(EID, eXP, 'speed');        } else {          API.upgradeEntity(EID, eXP, 'income');        }",
-```
+wind tick: `
+if (Math.random() > 0.27) {          API.upgradeEntity(EID, eXP, 'speed');        } else {          API.upgradeEntity(EID, eXP,'income');        }`
