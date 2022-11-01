@@ -27,25 +27,6 @@
 
 The following methods are used to control entities & make informed decisions during the game.
 
-
-
-### getTags
-
-*Type*: `Array`
-
-*Arguments*: ( [EID](#eid) )
-
-*Usage*: 
-```jsx
-function wallTickHandler(EID, eXP, API) {
-    const eTags = API.getTags(EID)
-    if (eXP > 1 && eTags.includes('spend')) {
-        API.upgradeWallRandomly(EID, eXP);
-    }  
-} 
-
-```
-
 ### upgradeEntity
 
 *Type*: `Void`
@@ -79,11 +60,9 @@ An entity's unique identifier.
 
 An Entity's currently unspent experience points. This can be saved for future use, converted or transfered. 
 
-### INCOME
-
+### XP LIFETIME
 *Type*: `Number`
 
-Currency rewarded for killing zombies and other rewarded events.
 
 ## Upgradable Attributes
 
@@ -91,18 +70,30 @@ When upgrading choose an attribute that will have the largest impact.
 
 ### HP
 *Type*: `Number`
+*Entities*: `Tower, Wall, Wind Turbine`
 
 ### HP RECOVERY
 *Type*: `Number`
-
-### XP LIFETIME
-*Type*: `Number`
+*Entities*: `Tower, Wall, Wind Turbine`
 
 ### DAMAGE
 *Type*: `Number`
+*Entities*: `Tower`
 
 ### RANGE
 *Type*: `Number`
+*Entities*: `Tower`
+
+### SPEED
+*Type*: `Number`
+*Entities*: `Wind Turbine`
+
+### INCOME
+
+*Type*: `Number`
+*Entities*: `Wind Turbine`
+
+Currency rewarded for killing zombies and other rewarded events.
 
 
 
